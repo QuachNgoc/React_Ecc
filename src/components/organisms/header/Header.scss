@@ -1,0 +1,36 @@
+@use "../../../scss/" as *;
+.header {
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  height: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-shadow: 0px 1px 20px rgba(0, 144, 255, 0.1);
+  .nav {
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 20px 0px;
+      border-bottom: 4px solid #fff;
+      transition: all 0.2s ease;
+      &.active {
+        font-weight: bold;
+        background: $gradient-primary;
+        @include text-gradient;
+        border-bottom: 4px solid $primary-color;
+        // animation: slip 0.3s linear;
+      }
+    }
+  }
+}
+
+// @keyframes slip {
+//   from {
+//     border-bottom: 4px solid #fff;
+//   }
+//   to {
+//     border-bottom: 4px solid $primary-color;
+//   }
+// }

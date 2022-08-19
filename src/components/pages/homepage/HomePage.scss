@@ -1,0 +1,63 @@
+@use "../../../scss/" as *;
+
+.introduce {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  h1 {
+    font-size: 45px;
+    span {
+      background: $gradient-secondary;
+      @include text-gradient;
+    }
+  }
+  .action {
+    span {
+      font-weight: bold;
+      background: $gradient-third;
+      @include text-gradient;
+    }
+  }
+  .info .info-item div {
+    border-right: 1px solid #d1d1d1;
+  }
+
+  .info .info-item:last-child div {
+    border-right: 0px;
+  }
+}
+
+section h3 {
+  color: #3c4861;
+}
+
+.intro-ec {
+  &-title {
+    background: $gradient-primary;
+    @include text-gradient;
+    position: absolute;
+    z-index: 10;
+    // transform: translateX(10%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border: 5px;
+    height: 25px;
+    width: 150px;
+    background: #fff;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    width: 100%;
+    height: 1px;
+    background: $gradient-primary;
+  }
+}

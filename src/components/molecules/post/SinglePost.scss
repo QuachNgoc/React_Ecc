@@ -1,0 +1,6 @@
+@use "../../../scss/" as *;
+
+.topic-name {
+  background: $gradient-primary;
+  @include text-gradient;
+}

@@ -1,0 +1,58 @@
+@mixin flex($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin grid-1() {
+  width: 100%;
+  margin-left: 43px;
+}
+
+@mixin grid-2() {
+  width: 100%;
+  padding-left: 43px;
+  padding-right: 43px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin manage-container {
+  flex: 1;
+  margin-left: 25px;
+  margin-right: 25px;
+  box-shadow: 0px 0px 0px 1px rgba(152, 161, 178, 0.1),
+    0px 1px 4px rgba(69, 75, 87, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@font-face {
+  font-family: "SegoeUI-regular";
+  src: url(../fonts/SegoeUI-Regular.ttf);
+}
+
+@font-face {
+  font-family: "SegoeUI-bold";
+  src: url(../fonts/SegoeUI-Bold.ttf);
+}
+
+@font-face {
+  font-family: "SegoeUI-light";
+  src: url(../fonts/SegoeUI-Light.ttf);
+}

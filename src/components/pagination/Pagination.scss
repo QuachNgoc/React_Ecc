@@ -1,0 +1,18 @@
+@use "../../scss/" as *;
+
+button.arrow {
+  background: linear-gradient(
+    213.49deg,
+    #86abf9 13.5%,
+    rgba(79, 134, 250, 0.38) 137.08%
+  );
+}
+
+.page-dot {
+  width: 10px;
+  height: 10px;
+  background: #d9d9d9;
+  &-active {
+    background: $gradient-primary;
+  }
+}

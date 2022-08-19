@@ -1,0 +1,171 @@
+@use "./scss/" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply text-base font-body;
+  }
+}
+
+.break-line-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
+.break-line-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.break-line-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.btn-base {
+  background: $gradient-primary;
+  border: 1px solid transparent;
+  box-shadow: 7px 6px 9px rgba(5, 97, 255, 0.13),
+    2px 1px 5px rgba(5, 97, 255, 0.15), 0px 0px 0px rgba(5, 97, 255, 0.15);
+}
+
+.btn-base:hover {
+  background: #fff;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.btn-primary {
+  background: $gradient-primary;
+}
+
+.btn-intro {
+  background: $primary-color;
+  filter: drop-shadow(0px 39px 15px rgba(122, 159, 240, 0.04))
+    drop-shadow(0px 22px 13px rgba(122, 159, 240, 0.13))
+    drop-shadow(0px 10px 10px rgba(122, 159, 240, 0.21))
+    drop-shadow(0px 2px 5px rgba(122, 159, 240, 0.25))
+    drop-shadow(0px 0px 0px rgba(122, 159, 240, 0.25));
+}
+
+.btn-load {
+  color: #ff6915;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 144, 82, 0.25) 0%,
+    rgba(245, 149, 75, 0.25) 100%
+  );
+  opacity: 0.9;
+  box-shadow: 0px 4px 20px 2px rgba(242, 120, 51, 0.15);
+  border-radius: 30px;
+}
+
+.btn-filter {
+  background: $gradient-green;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 14px;
+  &:not(.active) {
+    border: 1px solid #35e49b;
+    @include text-gradient;
+  }
+}
+
+.title:hover {
+  color: $primary-color;
+  cursor: pointer;
+}
+
+.topic-posts {
+  font-size: 22px;
+  background: $gradient-green;
+  @include text-gradient;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+br {
+  display: block;
+  margin: 12px;
+  content: " ";
+  line-height: 22px;
+}
+
+.post-preview hr {
+  position: absolute;
+  top: calc(100% + 20px);
+  width: 100%;
+  border-top: 1px solid #f0f0f0;
+}
+
+.post-preview:last-child hr {
+  border-top: 0px;
+  width: 0%;
+}
+
+.post-card-shadow {
+  background: #ffffff;
+  box-shadow: 0px 1px 20px rgba(120, 120, 120, 0.1);
+}
+
+.single-post-page-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.postList-enter {
+  opacity: 0;
+  transform: translateX(50%);
+}
+.postList-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.postList-exit {
+  opacity: 1;
+}
+.postList-exit-active {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: opacity 300ms, transform 300ms;
+}
+//pagination
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .selected {
+    @apply text-white;
+    background: $gradient-primary;
+    border-radius: 100%;
+  }
+}
+
+.pagination li {
+  display: flex;
+  padding: 5px 13px;
+  align-items: center;
+  justify-content: center;
+}
